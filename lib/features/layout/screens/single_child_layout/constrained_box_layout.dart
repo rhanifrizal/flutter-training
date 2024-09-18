@@ -5,7 +5,7 @@ class ConstrainedBoxLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String title = "Baseline Layout";
+    const String title = "Constrained Box Layout";
     return Scaffold(
         appBar: AppBar(
           title: const Text(title),
