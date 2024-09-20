@@ -9,6 +9,9 @@ import 'package:flutter_training/features/layout/screens/multi_child_layout/list
 import 'package:flutter_training/features/layout/screens/multi_child_layout/row_layout.dart';
 import 'package:flutter_training/features/layout/screens/multi_child_layout/stack_layout.dart';
 import 'package:flutter_training/features/layout/screens/multi_child_layout/table_layout.dart';
+import 'package:flutter_training/features/layout/screens/multi_child_layout/wrap_layout.dart';
+import 'package:flutter_training/features/layout/screens/others/flutter_layout_demo.dart';
+import 'package:flutter_training/features/layout/screens/others/pavlova.dart';
 import 'package:flutter_training/features/layout/screens/single_child_layout/aspect_ratio_layout.dart';
 import 'package:flutter_training/features/layout/screens/single_child_layout/baseline_layout.dart';
 import 'package:flutter_training/features/layout/screens/single_child_layout/center_layout.dart';
@@ -180,6 +183,25 @@ class LayoutScreen extends StatelessWidget {
               style: TextButton.styleFrom(backgroundColor: Colors.blue),
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const TableLayout())),
               child: const Text("Table", style: TextStyle(color: Colors.white)),
+            ),
+            TextButton(
+              style: TextButton.styleFrom(backgroundColor: Colors.blue),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WrapLayout())),
+              child: const Text("Wrap", style: TextStyle(color: Colors.white)),
+            ),
+            const SizedBox(height: 50),
+
+            // Others Layout
+            const Text("Others"),
+            TextButton(
+              style: TextButton.styleFrom(backgroundColor: Colors.blue),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const Pavlova())),
+              child: const Text("Pavlova - Nesting Rows and Columns", style: TextStyle(color: Colors.white)),
+            ),
+            TextButton(
+              style: TextButton.styleFrom(backgroundColor: Colors.blue),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FlutterLayoutDemo())),
+              child: const Text("Flutter Layout Demo", style: TextStyle(color: Colors.white)),
             ),
           ],
         ),
