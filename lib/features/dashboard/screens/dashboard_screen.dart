@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/features/constraint/screens/constraint_screen.dart';
+import 'package:flutter_training/features/exercise/screens/exercise_screen.dart';
 import 'package:flutter_training/features/layout/screens/layout_screen.dart';
 import 'package:flutter_training/features/media_query/screens/media_query.dart';
 
@@ -31,6 +32,11 @@ class DashboardScreen extends StatelessWidget {
                 style: TextButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const KMediaQuery())),
                 child: const Text("MediaQuery", style: TextStyle(color: Colors.white)),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ExerciseScreen())),
+                child: const Text("Exercises", style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
