@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_training/features/exercise/screens/auto_size_font.dart';
 import 'package:flutter_training/features/exercise/screens/home_screen_1.dart';
 import 'package:flutter_training/features/exercise/screens/home_screen_2.dart';
 import 'package:flutter_training/features/exercise/screens/scan_id/scan_screen.dart';
@@ -37,6 +38,11 @@ class ExerciseScreen extends StatelessWidget {
                 style: TextButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const HomeScreen2())),
                 child: const Text("Home Screen 2", style: TextStyle(color: Colors.white)),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AutoSizeFont())),
+                child: const Text("Auto Size Font", style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
