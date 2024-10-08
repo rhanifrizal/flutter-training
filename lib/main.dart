@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_training/features/dashboard/screens/dashboard_screen.dart';
+import 'package:flutter_training/features/navigation/app_route.dart';
 
 void main() {
   debugPaintSizeEnabled = false;
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      onGenerateRoute: onGenerateRoute,
       home: const DashboardScreen(),
     );
   }
