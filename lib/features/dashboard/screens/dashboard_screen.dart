@@ -3,6 +3,7 @@ import 'package:flutter_training/features/clean_code/clean_code_screen.dart';
 import 'package:flutter_training/features/constraint/screens/constraint_screen.dart';
 import 'package:flutter_training/features/exercise/screens/exercise_screen.dart';
 import 'package:flutter_training/features/layout/screens/layout_screen.dart';
+import 'package:flutter_training/features/localisation/localisation_screen.dart';
 import 'package:flutter_training/features/media_query/screens/media_query.dart';
 import 'package:flutter_training/features/navigation/first_screen.dart';
 import 'package:flutter_training/features/passing_state/passing_state_screen.dart';
@@ -61,6 +62,11 @@ class DashboardScreen extends StatelessWidget {
                 style: TextButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const PassingStateScreen())),
                 child: const Text("Passing State", style: TextStyle(color: Colors.white)),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const LocalisationScreen())),
+                child: const Text("Localisation", style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
