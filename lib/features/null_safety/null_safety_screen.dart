@@ -60,11 +60,13 @@ class NullSafetyScreen extends StatelessWidget {
     /// If the object is null, the entire expression evaluates to null.
     String? name;
     int? nameLength = name?.length; /// If the name is null, nameLength is null
+    debugPrint(nameLength.toString());
 
     /// Null-Coalescing Operator ??
     /// Purpose: To provide a default value if an expression evaluates to null.
     String? username;
     String displayName = username ?? 'Guest'; /// If the username is null, displayName is 'Guest'
+    debugPrint(displayName);
 
     /// Null-Coalescing Assignment Operator ??=
     /// Purpose: To assign a value to a variable only if it is currently null
@@ -75,11 +77,13 @@ class NullSafetyScreen extends StatelessWidget {
     /// Purpose: To insert elements into a collection if the collection is not null
     List<int>? numbers;
     var list = [1, 2, ...?numbers]; /// If numbers is null, it doesn't add anything
+    debugPrint(list.toString());
 
     /// Null-Aware Index Operator ?[]
     /// Purpose: To access an element in a collection only if the collection is not null
     Map<String, String>? user;
     String? email = user?['email']; /// If user is null, email is null
+    debugPrint(email);
 
     /// Null Assertion Operator !
     /// Purpose: To assert that an expression is not null, and cast it to a non-nullable type.
@@ -95,6 +99,7 @@ class NullSafetyScreen extends StatelessWidget {
         debugPrint('Hello, Guest!');
       }
     }
+    greet('');
 
     /// Common Pitfalls and Best Practices
     /// Avoid Overusing the Null Assertion Operator !
@@ -103,6 +108,7 @@ class NullSafetyScreen extends StatelessWidget {
       /// Some logic that might return null
       return null;
     }
+    getName();
 
     void printName() {
       String name = getName()!; /// Risky if getName() returns null
@@ -118,10 +124,13 @@ class NullSafetyScreen extends StatelessWidget {
         debugPrint('No name provided.');
       }
     }
+    printName2();
 
     /// Initialize Variable When Possible
     String title2 = '';
     int count2 = 0;
+    debugPrint(title2);
+    debugPrint(count2.toString());
 
     /// Use late keyword for non-nullable variables initialized later
     // late String configuration;
