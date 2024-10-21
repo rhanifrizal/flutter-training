@@ -11,6 +11,8 @@ import 'package:flutter_training/features/navigation/first_screen.dart';
 import 'package:flutter_training/features/null_safety/null_safety_screen.dart';
 import 'package:flutter_training/features/passing_state/passing_state_screen.dart';
 import 'package:flutter_training/features/rxdart/screens/rxdart_screen.dart';
+import 'package:flutter_training/features/widget_lifecycle/widget_lifecycle_screen.dart';
+import 'package:provider/provider.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -85,6 +87,18 @@ class DashboardScreen extends StatelessWidget {
                 style: TextButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const BottomNavigationScreen())),
                 child: const Text("Bottom Navigation vs Bottom Sheet", style: TextStyle(color: Colors.white)),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => ChangeNotifierProvider(
+                      create: (_) => CounterModel(),
+                      child: const WidgetLifecycleScreen(),
+                    ),
+                  ),
+                ),
+                child: const Text("Widget Lifecycle", style: TextStyle(color: Colors.white)),
               ),
             ],
           ),

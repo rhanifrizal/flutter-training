@@ -16,33 +16,43 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
       appBar: AppBar(
         title: const Text(title),
       ),
-      bottomSheet: Container(
+      body: Center(
+        child: TextFormField(
+          decoration: InputDecoration(
+            label: Text('TextForm'),
+          )
+        ),
+      ),
+      bottomNavigationBar: Container(
         height: 100,
-        width: 500,
         color: Colors.red,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        }
-      ),
+      // bottomSheet: Container(
+      //   height: 100,
+      //   color: Colors.red,
+      // ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.business),
+      //       label: 'Business',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.school),
+      //       label: 'School',
+      //     ),
+      //   ],
+      //   currentIndex: _selectedIndex,
+      //   onTap: (index) {
+      //     setState(() {
+      //       _selectedIndex = index;
+      //     });
+      //   }
+      // ),
     );
   }
 }
