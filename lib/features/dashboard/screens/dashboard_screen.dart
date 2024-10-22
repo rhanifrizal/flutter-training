@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_training/features/bottom_navigation/bottom_navigation_screen.dart';
 import 'package:flutter_training/features/clean_code/clean_code_screen.dart';
 import 'package:flutter_training/features/constraint/screens/constraint_screen.dart';
+import 'package:flutter_training/features/dependency_injection/dependency_injection_screen.dart';
 import 'package:flutter_training/features/exercise/screens/exercise_screen.dart';
 import 'package:flutter_training/features/import_assets/import_screen.dart';
 import 'package:flutter_training/features/layout/screens/layout_screen.dart';
@@ -99,6 +100,11 @@ class DashboardScreen extends StatelessWidget {
                   ),
                 ),
                 child: const Text("Widget Lifecycle", style: TextStyle(color: Colors.white)),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DependencyInjectionScreen())),
+                child: const Text("Dependency Injection", style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
