@@ -12,6 +12,7 @@ import 'package:flutter_training/features/navigation/first_screen.dart';
 import 'package:flutter_training/features/null_safety/null_safety_screen.dart';
 import 'package:flutter_training/features/passing_state/passing_state_screen.dart';
 import 'package:flutter_training/features/rxdart/screens/rxdart_screen.dart';
+import 'package:flutter_training/features/textformfield_controllers_formkey_validation_listener/textformfield_controller_validation_listener_screen.dart';
 import 'package:flutter_training/features/widget_lifecycle/widget_lifecycle_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -105,6 +106,11 @@ class DashboardScreen extends StatelessWidget {
                 style: TextButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DependencyInjectionScreen())),
                 child: const Text("Dependency Injection", style: TextStyle(color: Colors.white)),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const TextformfieldControllerValidationListenerScreen())),
+                child: const Text("TextFormField, Controller, Validation, Listener", style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
