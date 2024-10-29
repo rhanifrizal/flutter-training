@@ -12,6 +12,7 @@ class _TextformfieldControllerValidationListenerScreenState
     extends State<TextformfieldControllerValidationListenerScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
 
   @override
   void initState() {
@@ -19,13 +20,19 @@ class _TextformfieldControllerValidationListenerScreenState
     _nameController.addListener(() {
       debugPrint('Name field updated: ${_nameController.text}');
     });
+    _emailController.addListener(() {
+      debugPrint('Email field updated: ${_emailController.text}');
+    });
   }
 
   @override
   void dispose() {
     super.dispose();
     _nameController.dispose();
+    _emailController.dispose();
   }
+
+  RegExp get _emailRegex => RegExp(r'^\S+@\S+$');
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +46,10 @@ class _TextformfieldControllerValidationListenerScreenState
         child: Center(
           child: Form(
             key: _formKey,
+            /// AutovalidateMode.always: Trigger validation as soon as the form becomes visible
+            /// AutovalidateMode.onUserInteraction: Trigger validation as soon as one of the form value has been changed
+            /// AutovalidateMode.disabled: To disable validation on form
+            autovalidateMode: AutovalidateMode.always,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -48,11 +59,30 @@ class _TextformfieldControllerValidationListenerScreenState
                   obscureText: false,
                   decoration: const InputDecoration(
                     labelText: 'Name',
-                    hintText: 'Enter you name',
+                    hintText: 'Enter your name',
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter some text';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 15),
+                TextFormField(
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  obscureText: false,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                  ),
+                  validator: (value) {
+                    if(value!.isEmpty || value == '') {
+                      return 'Please enter your email';
+                    }
+                    if(!_emailRegex.hasMatch(value)) {
+                      return 'Email address is not valid';
                     }
                     return null;
                   },
