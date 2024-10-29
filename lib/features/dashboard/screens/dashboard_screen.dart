@@ -4,6 +4,7 @@ import 'package:flutter_training/features/clean_code/clean_code_screen.dart';
 import 'package:flutter_training/features/constraint/screens/constraint_screen.dart';
 import 'package:flutter_training/features/dependency_injection/dependency_injection_screen.dart';
 import 'package:flutter_training/features/exercise/screens/exercise_screen.dart';
+import 'package:flutter_training/features/gesture_detector_and_inkwell/gesture_detector_and_inkwell_screen.dart';
 import 'package:flutter_training/features/import_assets/import_screen.dart';
 import 'package:flutter_training/features/layout/screens/layout_screen.dart';
 import 'package:flutter_training/features/localisation/localisation_screen.dart';
@@ -111,6 +112,11 @@ class DashboardScreen extends StatelessWidget {
                 style: TextButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const TextformfieldControllerValidationListenerScreen())),
                 child: const Text("TextFormField, Controller, Validation, Listener", style: TextStyle(color: Colors.white)),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GestureDetectorAndInkwellScreen())),
+                child: const Text("Gesture Detector and InkWell", style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
